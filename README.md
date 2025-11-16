@@ -1,86 +1,50 @@
-# 🛠️ Architect AI - Autonomous Code Generation Agent
+# 🚀 Architect AI - From Idea to Code in Seconds
 
 <div align="center">
 
-**Transform natural language into complete working projects with an interactive Streamlit interface**
+**Your AI development team that turns natural language into complete working projects**
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.6.3-green.svg)](https://github.com/langchain-ai/langgraph)
 [![Groq](https://img.shields.io/badge/Groq-Powered-orange.svg)](https://groq.com/)
 
+*"Create a modern to-do app"* → **Complete project with HTML, CSS & JS** → **Download & Deploy** ✨
+
 </div>
 
 ---
 
-## � Overview
+## 🔮 What is Architect AI?
 
-**Architect AI** is a revolutionary autonomous code generation system that transforms natural language descriptions into complete, functional software projects. Built with a stunning Streamlit interface and powered by cutting-edge AI technology, it simulates an entire development team working in harmony.
+Imagine having a **full development team** at your fingertips. Just describe your project idea, and watch as three AI agents collaborate to build it from scratch - just like real developers would!
 
-### 🎯 What Makes Architect AI Special?
+🧠 **Planner** analyzes your idea → 🏗️ **Architect** designs the structure → 💻 **Coder** builds everything
 
-- **🧠 Intelligent Multi-Agent System**: Three specialized AI agents (Planner, Architect, Coder) collaborate like a real dev team
-- **🎨 Beautiful Real-Time Interface**: Watch your project come to life with smooth animations and live progress tracking
-- **📦 Complete Project Generation**: From HTML/CSS/JS apps to Python backends - full projects, not just code snippets
-- **⚡ Lightning Fast**: Powered by Groq's ultra-fast inference for near-instant results
-- **📥 Instant Downloads**: Get your complete project as a ready-to-deploy ZIP file
-- **🎯 Smart Complexity Control**: Adjust project complexity with intelligent recursion limits
+### ✨ Why Architect AI Rocks
 
-Simply describe your vision in plain English - "Create a modern to-do app with dark theme" or "Build a calculator with colorful animations" - and watch Architect AI plan, design, and implement your entire project from scratch!
+- **⚡ Lightning Fast** - Powered by Groq's ultra-fast inference
+- **🎨 Beautiful Interface** - Watch your project come alive with real-time progress
+- **📦 Complete Projects** - Not just code snippets, but full working applications
+- **📥 One-Click Download** - Get your ZIP file and deploy immediately
+- **🎯 Smart Complexity** - From simple tools to complex apps, you control the scope
 
 ### 🚀 Perfect For
 
-- **Rapid Prototyping**: Turn ideas into working prototypes in minutes
-- **Learning & Education**: See how complete projects are structured and built
-- **Client Demos**: Quickly create proof-of-concepts for presentations
-- **Side Projects**: Generate fully functional apps without starting from scratch
-- **Code Inspiration**: Get fresh perspectives on solving common problems
-
-### ✨ Key Features
-
-- 🎨 **Beautiful Streamlit UI** - Interactive web interface with smooth animations
-- 🤖 **Multi-Agent Architecture** - Three specialized AI agents working in harmony
-- 📝 **Natural Language Input** - Describe your project in plain English
-- 🏗️ **Automated Project Scaffolding** - Creates complete project structures
-- 💾 **Real-time Progress Tracking** - Watch agents work with dynamic status indicators
-- 📥 **Download Projects as ZIP** - Get your complete project instantly
-- 📁 **Unique Project Folders** - Each project saved with timestamp for organization
-- 🎯 **Dynamic Examples** - Smart examples that adapt to your complexity settings
-- 🔧 **Tool-Augmented Coding** - Uses real file system operations like a human developer
-- 🚀 **Powered by Groq** - Lightning-fast inference using state-of-the-art LLMs
+💡 **Rapid Prototyping** • 🎓 **Learning & Education** • 👥 **Client Demos** • 🔧 **Side Projects**
 
 ---
 
-## 🏗️ Architecture
-
-Architect AI implements a multi-agent workflow using LangGraph with a beautiful Streamlit interface, featuring three specialized agents:
-
-### 🧠 Agent Roles
-
-1. **Planner Agent**
-   - Analyzes your natural language request
-   - Generates a comprehensive project plan
-   - Defines tech stack, features, and file structure
-
-2. **Architect Agent**
-   - Converts the plan into actionable implementation steps
-   - Creates detailed task descriptions for each file
-   - Establishes dependencies and execution order
-
-3. **Coder Agent**
-   - Implements each task using ReAct (Reasoning + Acting) pattern
-   - Writes actual code to files using available tools
-   - Iterates through all implementation steps sequentially
-
-<div align="center">
-    <!-- Architecture diagram would go here -->
-</div>
-
-### 🔄 Workflow
+## 🏗️ How It Works
 
 ```
-User Prompt → Planner → Architect → Coder (loop) → Complete Project
+💬 "Build a calculator app" → 🧠 Plan → 🏗️ Design → 💻 Code → 📦 Complete Project
 ```
+
+**Three AI Agents, One Goal:**
+- 🧠 **Planner** - Breaks down your idea into a detailed project plan
+- 🏗️ **Architect** - Designs the file structure and implementation steps  
+- 💻 **Coder** - Writes all the code using real file system operations
 
 ---
 
@@ -158,60 +122,23 @@ Use the **Recursion Limit** slider in the sidebar to control project complexity:
 
 ---
 
-## 💡 Usage
+## 💡 Quick Start
 
-### Quick Start
+1. **Launch:** `streamlit run app.py`
+2. **Describe:** "Create a modern calculator with animations"
+3. **Watch:** Three AI agents collaborate in real-time
+4. **Download:** Get your complete project as a ZIP file
 
-1. **Launch the application**
-   ```bash
-   streamlit run app.py
-   ```
+### 🎯 Example Ideas
 
-2. **Enter your project idea** in the text area
-   - Example: "Create a simple calculator web application"
+```
+✨ "Build a to-do app with dark theme and local storage"
+🎮 "Create a dice rolling game with colorful animations"  
+🌐 "Design a landing page for a tech startup"
+🧮 "Make a scientific calculator with history feature"
+```
 
-3. **Adjust the recursion limit** using the sidebar slider (if needed)
-
-4. **Click "Generate Project"** and watch the magic happen!
-
-5. **Monitor progress** as agents work:
-   - 🧠 **Planner** creates the project plan
-   - 🏗️ **Architect** designs the implementation
-   - 💻 **Coder** builds your project file by file
-
-6. **Download your project** as a ZIP file when complete
-
-### Example Prompts
-
-Here are some example prompts to get you started:
-
-1. **Web Applications**
-   ```
-   Create a to-do list application using HTML, CSS, and JavaScript with local storage
-   ```
-
-2. **Interactive Tools**
-   ```
-   Build a simple calculator with a modern UI using vanilla JavaScript
-   ```
-
-3. **Games**
-   ```
-   Create a dice rolling game with colorful animations
-   ```
-
-4. **Landing Pages**
-   ```
-   Design a modern landing page for a tech startup with smooth animations
-   ```
-
-### 📥 Downloading Your Project
-
-After generation completes:
-1. Click the **"📥 Download Project as ZIP"** button
-2. The ZIP file will be downloaded to your browser's download folder
-3. Extract and open in your favorite code editor
-4. Projects are also saved in `generated_projects/` folder with timestamps
+**Pro Tip:** Use the complexity slider to control project scope - from simple tools to full applications!
 
 ---
 
@@ -264,24 +191,11 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ---
 
-## 🔧 Technical Details
+## 🔧 Under the Hood
 
-### Dependencies
-
-- **Streamlit** - Beautiful web UI framework
-- **LangChain & LangGraph** - Agent orchestration and workflow management
-- **Groq** - Lightning-fast LLM inference (using `openai/gpt-oss-120b` model)
-- **Pydantic** - Data validation and settings management
-- **python-dotenv** - Environment variable management
-
-### Agent Tools
-
-The Coder Agent has access to these tools:
-
-- `write_file(path, content)` - Create or overwrite files
-- `read_file(path)` - Read file contents
-- `list_files(directory)` - List files in a directory
-- `get_current_directory()` - Get the current working directory
+**Tech Stack:** Streamlit + LangGraph + Groq API  
+**AI Model:** Ultra-fast `openai/gpt-oss-120b` via Groq  
+**Agent Tools:** Real file system operations (read, write, list directories)
 
 ---
 
@@ -303,7 +217,13 @@ This project is open source and available for personal and educational use.
 
 ---
 
-## � Troubleshooting
+## 📝 License
+
+This project is open source and available for personal and educational use.
+
+---
+
+## ⚠️ Troubleshooting
 
 ### Common Issues
 
@@ -332,23 +252,18 @@ This project is open source and available for personal and educational use.
 
 ---
 
-## 📧 Support
+## 🤝 Contributing
 
-For questions, issues, or suggestions:
-- Open an issue on GitHub
-- Check the troubleshooting section above
+Found a bug? Have an awesome idea? PRs welcome! 
 
----
+## 🙏 Built With
 
-## 🙏 Acknowledgments
-
-- Built with [LangGraph](https://github.com/langchain-ai/langgraph) by LangChain
-- Powered by [Groq](https://groq.com/) for fast LLM inference
-- UI built with [Streamlit](https://streamlit.io/)
+[LangGraph](https://github.com/langchain-ai/langgraph) • [Groq](https://groq.com/) • [Streamlit](https://streamlit.io/)
 
 ---
 
 <div align="center">
 
-**Architect AI** - Autonomous Code Generation
+**🚀 Architect AI** - *Your AI Development Team*
+
 </div>
