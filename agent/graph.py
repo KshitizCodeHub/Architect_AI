@@ -13,26 +13,43 @@ from agent.tools import write_file, read_file, get_current_directory, list_files
 _ = load_dotenv()
 
 # Handle both local development and Streamlit Cloud
-import os
+groq_api_key = None
+
+# Try multiple ways to get the API key
 try:
     import streamlit as st
     # Try to get from Streamlit secrets first
-    groq_api_key = st.secrets.get("GROQ_API_KEY")
-    if not groq_api_key:
-        groq_api_key = os.getenv("GROQ_API_KEY")
-except:
-    # Fallback to environment variable for local development
+    if hasattr(st, 'secrets') and 'GROQ_API_KEY' in st.secrets:
+        groq_api_key = st.secrets["GROQ_API_KEY"]
+except (ImportError, AttributeError, KeyError):
+    pass
+
+# Fallback to environment variable
+if not groq_api_key:
     groq_api_key = os.getenv("GROQ_API_KEY")
 
-# Initialize ChatGroq with explicit API key
+# If still no API key, try to initialize ChatGroq without explicit key (it may find it itself)
 if not groq_api_key:
-    raise ValueError("GROQ_API_KEY not found in environment variables or Streamlit secrets")
+    # Set a placeholder and let ChatGroq handle it
+    os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY", "")
 
-llm = ChatGroq(
-    api_key=groq_api_key,
-    model="openai/gpt-oss-120b",
-    temperature=0.1
-)
+# Initialize ChatGroq
+try:
+    if groq_api_key:
+        llm = ChatGroq(
+            api_key=groq_api_key,
+            model="openai/gpt-oss-120b",
+            temperature=0.1
+        )
+    else:
+        # Let ChatGroq find the API key from environment
+        llm = ChatGroq(
+            model="openai/gpt-oss-120b",
+            temperature=0.1
+        )
+except Exception as e:
+    # If initialization fails, try without explicit parameters
+    llm = ChatGroq(model="openai/gpt-oss-120b")
 
 
 def planner_agent(state: dict) -> dict:
