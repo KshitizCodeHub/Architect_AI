@@ -11,7 +11,9 @@
 
 </div>
 
-Describe your project in plain English → Get a complete, working application. Three AI agents collaborate like a real development team to plan, design, and code your entire project.
+Architect AI is an autonomous code generation system that transforms your ideas into complete, functional software projects. Simply describe what you want to build in natural language, and watch as three specialized AI agents work together to create your entire application from scratch.
+
+Whether you need a web app, game, calculator, or landing page, Architect AI handles everything - from planning and architecture to writing production-ready code. No more starting with blank files or wrestling with boilerplate code. Just describe your vision and get a complete, deployable project in minutes.
 
 ```mermaid
 flowchart TD
