@@ -21,6 +21,8 @@ try:
     # Try to get from Streamlit secrets first
     if hasattr(st, 'secrets') and 'GROQ_API_KEY' in st.secrets:
         groq_api_key = st.secrets["GROQ_API_KEY"]
+        # Clean the key - remove any whitespace
+        groq_api_key = groq_api_key.strip() if groq_api_key else None
 except (ImportError, AttributeError, KeyError):
     pass
 
@@ -35,20 +37,25 @@ if not groq_api_key:
 
 # Initialize ChatGroq
 try:
-    if groq_api_key:
+    if groq_api_key and groq_api_key.startswith('gsk_'):
+        # Ensure the API key is properly formatted
         llm = ChatGroq(
             api_key=groq_api_key,
             model="openai/gpt-oss-120b",
             temperature=0.1
         )
     else:
-        # Let ChatGroq find the API key from environment
+        # Set environment variable and let ChatGroq find it
+        if groq_api_key:
+            os.environ["GROQ_API_KEY"] = groq_api_key
         llm = ChatGroq(
             model="openai/gpt-oss-120b",
             temperature=0.1
         )
 except Exception as e:
-    # If initialization fails, try without explicit parameters
+    # Last resort - basic initialization
+    if groq_api_key:
+        os.environ["GROQ_API_KEY"] = groq_api_key
     llm = ChatGroq(model="openai/gpt-oss-120b")
 
 
