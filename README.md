@@ -28,9 +28,9 @@ graph LR
     C --> D[Coder Agent]
     D --> E[Complete Project]
     
-    B -.-> F["• Analyzes requirements<br/>• Defines tech stack<br/>• Creates project plan"]
-    C -.-> G["• Designs file structure<br/>• Plans implementation<br/>• Sets dependencies"]
-    D -.-> H["• Writes actual code<br/>• Creates all files<br/>• Tests functionality"]
+    B -.-> F[Analyzes requirements<br/>Defines tech stack<br/>Creates project plan]
+    C -.-> G[Designs file structure<br/>Plans implementation<br/>Sets dependencies]
+    D -.-> H[Writes actual code<br/>Creates all files<br/>Tests functionality]
 ```
 
 ### Why Choose Architect AI
@@ -51,16 +51,16 @@ graph LR
 
 ```mermaid
 flowchart TD
-    Start([User Input: "Build a calculator app"]) --> Planner
+    Start([User Input: Build a calculator app]) --> Planner
     
-    subgraph "Agent Pipeline"
-        Planner["Planner Agent<br/>📋 Analyzes requirements"] --> Architect
-        Architect["Architect Agent<br/>🏗️ Designs structure"] --> Coder
-        Coder["Coder Agent<br/>⚙️ Implements code"]
+    subgraph Pipeline [Agent Pipeline]
+        Planner[Planner Agent<br/>Analyzes requirements] --> Architect
+        Architect[Architect Agent<br/>Designs structure] --> Coder
+        Coder[Coder Agent<br/>Implements code]
     end
     
-    Coder --> Files["Generated Files<br/>├── index.html<br/>├── style.css<br/>├── script.js<br/>└── README.md"]
-    Files --> Download["📦 Download ZIP"]
+    Coder --> Files[Generated Files<br/>index.html<br/>style.css<br/>script.js<br/>README.md]
+    Files --> Download[Download ZIP]
     
     style Planner fill:#e1f5fe
     style Architect fill:#f3e5f5
@@ -152,9 +152,9 @@ Use the **Recursion Limit** slider in the sidebar to control project complexity:
 
 ```mermaid
 flowchart LR
-    A["1. Launch App<br/>`streamlit run app.py`"] --> B["2. Describe Project<br/>Enter your idea"]
-    B --> C["3. Watch Progress<br/>Agents collaborate"]
-    C --> D["4. Download<br/>Get ZIP file"]
+    A[1. Launch App<br/>streamlit run app.py] --> B[2. Describe Project<br/>Enter your idea]
+    B --> C[3. Watch Progress<br/>Agents collaborate]
+    C --> D[4. Download<br/>Get ZIP file]
     
     style A fill:#f0f7ff
     style B fill:#f0f7ff
@@ -228,16 +228,16 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ```mermaid
 graph TB
-    subgraph "Frontend"
+    subgraph Frontend
         UI[Streamlit Web Interface]
     end
     
-    subgraph "AI Pipeline"
+    subgraph Pipeline [AI Pipeline]
         LG[LangGraph Orchestration]
-        Model[Groq API - GPT-OSS-120B]
+        Model[Groq API GPT-OSS-120B]
     end
     
-    subgraph "Agent Tools"
+    subgraph Tools [Agent Tools]
         FS[File System Operations]
         RW[Read/Write Files]
         LD[List Directories]
