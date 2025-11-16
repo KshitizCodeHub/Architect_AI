@@ -1,15 +1,13 @@
+# Architect AI
+
 <div align="center">
 
-# 🚀 Architect AI
-
-### *Transform natural language into complete working projects*
+**Transform natural language into complete working projects**
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.6.3-green.svg)](https://github.com/langchain-ai/langgraph)
 [![Groq](https://img.shields.io/badge/Groq-Powered-orange.svg)](https://groq.com/)
-
-**💡 Describe your idea → 🤖 AI builds it → 📦 Download & deploy**
 
 </div>
 
@@ -17,16 +15,16 @@ Describe your project in plain English → Get a complete, working application. 
 
 ```mermaid
 flowchart TD
-    Start(["💭 User Input<br/>Build a calculator app"]) --> Planner
+    Start([User Input: Build a calculator app]) --> Planner
     
-    subgraph Pipeline ["🤖 Agent Pipeline"]
-        Planner["🧠 Planner Agent<br/>📋 Analyzes requirements"] --> Architect
-        Architect["🏗️ Architect Agent<br/>📐 Designs structure"] --> Coder
-        Coder["💻 Coder Agent<br/>⚙️ Implements code"]
+    subgraph Pipeline [Agent Pipeline]
+        Planner[Planner Agent<br/>Analyzes requirements] --> Architect
+        Architect[Architect Agent<br/>Designs structure] --> Coder
+        Coder[Coder Agent<br/>Implements code]
     end
     
-    Coder --> Files["📁 Generated Files<br/>📄 index.html<br/>🎨 style.css<br/>⚡ script.js<br/>📖 README.md"]
-    Files --> Download["📦 Download ZIP"]
+    Coder --> Files[Generated Files<br/>index.html<br/>style.css<br/>script.js<br/>README.md]
+    Files --> Download[Download ZIP]
     
     style Planner fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#000
     style Architect fill:#fce4ec,stroke:#c2185b,stroke-width:3px,color:#000
@@ -36,11 +34,11 @@ flowchart TD
     style Files fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px,color:#000
     style Download fill:#e0f2f1,stroke:#00796b,stroke-width:3px,color:#000
     
-    linkStyle 0 stroke:#333,stroke-width:4px
-    linkStyle 1 stroke:#333,stroke-width:4px
-    linkStyle 2 stroke:#333,stroke-width:4px
-    linkStyle 3 stroke:#333,stroke-width:4px
-    linkStyle 4 stroke:#333,stroke-width:4px
+    linkStyle 0 stroke:#2196f3,stroke-width:4px
+    linkStyle 1 stroke:#2196f3,stroke-width:4px
+    linkStyle 2 stroke:#2196f3,stroke-width:4px
+    linkStyle 3 stroke:#2196f3,stroke-width:4px
+    linkStyle 4 stroke:#2196f3,stroke-width:4px
 ```
 
 **Perfect For:** Rapid Prototyping • Learning • Client Demos • Side Projects
@@ -87,9 +85,14 @@ Contributions are welcome! Here's how you can help:
 
 ---
 
-## 📝 License
+## Key Features
 
-This project is open source and available for personal and educational use.
+- **Multi-Agent Collaboration** - Three specialized AI agents work together
+- **Real-time Progress Tracking** - Watch your project being built step by step
+- **Complete Project Generation** - Full applications with all necessary files
+- **One-Click Download** - Get your project as a ready-to-deploy ZIP file
+- **Complexity Control** - Adjust project scope with the recursion limit slider
+- **Multiple Project Types** - Web apps, games, tools, landing pages, and more
 
 ---
 
@@ -122,16 +125,28 @@ This project is open source and available for personal and educational use.
 
 ---
 
-## 🛠️ Built With
+## How It Works
 
-[**LangGraph**](https://github.com/langchain-ai/langgraph) • [**Groq**](https://groq.com/) • [**Streamlit**](https://streamlit.io/)
+**1. Planner Agent** analyzes your natural language request and creates a comprehensive project plan with technology choices and feature specifications.
+
+**2. Architect Agent** converts the plan into actionable implementation steps, designing the file structure and defining dependencies.
+
+**3. Coder Agent** executes the implementation using real file system operations, writing production-ready code for each component.
+
+Each agent uses advanced reasoning patterns and has access to specialized tools for file management, ensuring your project is built systematically and professionally.
+
+## Built With
+
+[LangGraph](https://github.com/langchain-ai/langgraph) • [Groq](https://groq.com/) • [Streamlit](https://streamlit.io/) • GPT-OSS-120B
+
+## License
+
+This project is open source and available for personal and educational use.
 
 ---
 
 <div align="center">
 
-### 🚀 **Architect AI** - *Your AI Development Team*
-
-*Transform ideas into reality with the power of AI*
+**Architect AI** - *Your AI Development Team*
 
 </div>
