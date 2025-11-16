@@ -1,4 +1,4 @@
-# 🚀 Architect AI - From Idea to Code in Seconds
+# Architect AI - From Idea to Code in Seconds
 
 <div align="center">
 
@@ -9,46 +9,72 @@
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.6.3-green.svg)](https://github.com/langchain-ai/langgraph)
 [![Groq](https://img.shields.io/badge/Groq-Powered-orange.svg)](https://groq.com/)
 
-*"Create a modern to-do app"* → **Complete project with HTML, CSS & JS** → **Download & Deploy** ✨
+```
+"Create a modern to-do app" → Complete project with HTML, CSS & JS → Download & Deploy
+```
 
 </div>
 
 ---
 
-## 🔮 What is Architect AI?
+## What is Architect AI?
 
 Imagine having a **full development team** at your fingertips. Just describe your project idea, and watch as three AI agents collaborate to build it from scratch - just like real developers would!
 
-🧠 **Planner** analyzes your idea → 🏗️ **Architect** designs the structure → 💻 **Coder** builds everything
+```mermaid
+graph LR
+    A[Your Idea] --> B[Planner Agent]
+    B --> C[Architect Agent]
+    C --> D[Coder Agent]
+    D --> E[Complete Project]
+    
+    B -.-> F["• Analyzes requirements<br/>• Defines tech stack<br/>• Creates project plan"]
+    C -.-> G["• Designs file structure<br/>• Plans implementation<br/>• Sets dependencies"]
+    D -.-> H["• Writes actual code<br/>• Creates all files<br/>• Tests functionality"]
+```
 
-### ✨ Why Architect AI Rocks
+### Why Choose Architect AI
 
-- **⚡ Lightning Fast** - Powered by Groq's ultra-fast inference
-- **🎨 Beautiful Interface** - Watch your project come alive with real-time progress
-- **📦 Complete Projects** - Not just code snippets, but full working applications
-- **📥 One-Click Download** - Get your ZIP file and deploy immediately
-- **🎯 Smart Complexity** - From simple tools to complex apps, you control the scope
+- **Lightning Fast** - Powered by Groq's ultra-fast inference
+- **Beautiful Interface** - Real-time progress tracking with smooth animations
+- **Complete Projects** - Full working applications, not just code snippets
+- **One-Click Download** - Get your ZIP file and deploy immediately
+- **Smart Complexity Control** - From simple tools to complex applications
 
-### 🚀 Perfect For
+### Perfect For
 
-💡 **Rapid Prototyping** • 🎓 **Learning & Education** • 👥 **Client Demos** • 🔧 **Side Projects**
+**Rapid Prototyping** | **Learning & Education** | **Client Demos** | **Side Projects**
 
 ---
 
-## 🏗️ How It Works
+## System Architecture
 
-```
-💬 "Build a calculator app" → 🧠 Plan → 🏗️ Design → 💻 Code → 📦 Complete Project
+```mermaid
+flowchart TD
+    Start([User Input: "Build a calculator app"]) --> Planner
+    
+    subgraph "Agent Pipeline"
+        Planner["Planner Agent<br/>📋 Analyzes requirements"] --> Architect
+        Architect["Architect Agent<br/>🏗️ Designs structure"] --> Coder
+        Coder["Coder Agent<br/>⚙️ Implements code"]
+    end
+    
+    Coder --> Files["Generated Files<br/>├── index.html<br/>├── style.css<br/>├── script.js<br/>└── README.md"]
+    Files --> Download["📦 Download ZIP"]
+    
+    style Planner fill:#e1f5fe
+    style Architect fill:#f3e5f5
+    style Coder fill:#e8f5e8
 ```
 
-**Three AI Agents, One Goal:**
-- 🧠 **Planner** - Breaks down your idea into a detailed project plan
-- 🏗️ **Architect** - Designs the file structure and implementation steps  
-- 💻 **Coder** - Writes all the code using real file system operations
+**Three Specialized AI Agents Working in Harmony:**
+- **Planner** - Breaks down your idea into a comprehensive project plan
+- **Architect** - Designs the file structure and implementation roadmap  
+- **Coder** - Writes production-ready code using real file system operations
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -58,7 +84,7 @@ Before you begin, ensure you have the following installed:
 - **uv** (Python package installer) - [Installation Guide](https://docs.astral.sh/uv/getting-started/installation/)
 - **Groq API Key** - [Get your API key](https://console.groq.com/keys)
 
-### 📦 Installation
+### Installation
 
 1. **Clone the repository**
    ```bash
@@ -122,21 +148,28 @@ Use the **Recursion Limit** slider in the sidebar to control project complexity:
 
 ---
 
-## 💡 Quick Start
+## Quick Start Guide
 
-1. **Launch:** `streamlit run app.py`
-2. **Describe:** "Create a modern calculator with animations"
-3. **Watch:** Three AI agents collaborate in real-time
-4. **Download:** Get your complete project as a ZIP file
-
-### 🎯 Example Ideas
-
+```mermaid
+flowchart LR
+    A["1. Launch App<br/>`streamlit run app.py`"] --> B["2. Describe Project<br/>Enter your idea"]
+    B --> C["3. Watch Progress<br/>Agents collaborate"]
+    C --> D["4. Download<br/>Get ZIP file"]
+    
+    style A fill:#f0f7ff
+    style B fill:#f0f7ff
+    style C fill:#f0f7ff
+    style D fill:#f0f7ff
 ```
-✨ "Build a to-do app with dark theme and local storage"
-🎮 "Create a dice rolling game with colorful animations"  
-🌐 "Design a landing page for a tech startup"
-🧮 "Make a scientific calculator with history feature"
-```
+
+### Example Project Ideas
+
+| Category | Description |
+|----------|-------------|
+| **Web Apps** | "Build a to-do app with dark theme and local storage" |
+| **Games** | "Create a dice rolling game with colorful animations" |
+| **Landing Pages** | "Design a modern landing page for a tech startup" |
+| **Tools** | "Make a scientific calculator with history feature" |
 
 **Pro Tip:** Use the complexity slider to control project scope - from simple tools to full applications!
 
@@ -191,11 +224,37 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ---
 
-## 🔧 Under the Hood
+## Technical Architecture
 
-**Tech Stack:** Streamlit + LangGraph + Groq API  
-**AI Model:** Ultra-fast `openai/gpt-oss-120b` via Groq  
-**Agent Tools:** Real file system operations (read, write, list directories)
+```mermaid
+graph TB
+    subgraph "Frontend"
+        UI[Streamlit Web Interface]
+    end
+    
+    subgraph "AI Pipeline"
+        LG[LangGraph Orchestration]
+        Model[Groq API - GPT-OSS-120B]
+    end
+    
+    subgraph "Agent Tools"
+        FS[File System Operations]
+        RW[Read/Write Files]
+        LD[List Directories]
+    end
+    
+    UI --> LG
+    LG --> Model
+    Model --> FS
+    FS --> RW
+    FS --> LD
+```
+
+**Core Technologies:**
+- **Frontend:** Streamlit for beautiful web interface
+- **AI Pipeline:** LangGraph for agent orchestration
+- **Language Model:** Ultra-fast GPT-OSS-120B via Groq API
+- **Agent Capabilities:** Real file system operations
 
 ---
 
@@ -252,18 +311,26 @@ This project is open source and available for personal and educational use.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Found a bug? Have an awesome idea? PRs welcome! 
+Found a bug or have an enhancement idea? Contributions are welcome!
 
-## 🙏 Built With
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
-[LangGraph](https://github.com/langchain-ai/langgraph) • [Groq](https://groq.com/) • [Streamlit](https://streamlit.io/)
+## Built With
+
+- [LangGraph](https://github.com/langchain-ai/langgraph) - Agent orchestration framework
+- [Groq](https://groq.com/) - Ultra-fast LLM inference
+- [Streamlit](https://streamlit.io/) - Web application framework
 
 ---
 
 <div align="center">
 
-**🚀 Architect AI** - *Your AI Development Team*
+**Architect AI** - *Your AI Development Team*
 
 </div>
