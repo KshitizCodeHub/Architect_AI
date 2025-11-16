@@ -6,6 +6,29 @@ import io
 from agent.graph import agent
 from agent.tools import init_project_root
 
+def count_generated_files(project_path: str) -> int:
+    """Count the actual number of files generated in the project directory"""
+    if not os.path.exists(project_path):
+        return 0
+    
+    file_count = 0
+    for root, dirs, files in os.walk(project_path):
+        file_count += len(files)
+    return file_count
+
+def get_generated_files_list(project_path: str) -> list:
+    """Get a list of all generated files with their relative paths"""
+    if not os.path.exists(project_path):
+        return []
+    
+    files_list = []
+    for root, dirs, files in os.walk(project_path):
+        for file in files:
+            full_path = os.path.join(root, file)
+            relative_path = os.path.relpath(full_path, project_path)
+            files_list.append(relative_path)
+    return files_list
+
 def create_project_zip(project_path):
     """Create a ZIP file containing all project files"""
     zip_buffer = io.BytesIO()
@@ -837,12 +860,8 @@ if generate_button and user_prompt:
             with col_m1:
                 st.metric("⏱️ Time", f"{generation_time:.1f}s")
             with col_m2:
-                # Count actual files created in the project directory
-                files_count = 0
-                if os.path.exists(project_root):
-                    files_count = sum([len(files) for r, d, files in os.walk(project_root)])
-                elif plan and hasattr(plan, 'files'):
-                    files_count = len(plan.files)  # Fallback to plan if project dir doesn't exist yet
+                # Count actual generated files
+                files_count = count_generated_files(project_root)
                 st.metric("📄 Files", files_count)
             with col_m3:
                 estimated_tokens = len(user_prompt) * 50
@@ -851,9 +870,12 @@ if generate_button and user_prompt:
             
             # Files
             st.markdown('<p style="font-size: 1.1rem; color: #00d4ff; font-weight: 700; margin-top: 1.5rem;">📁 Generated Files</p>', unsafe_allow_html=True)
-            if plan and hasattr(plan, 'files'):
-                for file in plan.files:
-                    st.markdown(f"- `{file.path}` - {file.purpose}")
+            generated_files = get_generated_files_list(project_root)
+            if generated_files:
+                for file_path in generated_files:
+                    st.markdown(f"- `{file_path}`")
+            else:
+                st.markdown("No files generated yet.")
             
             # Location
             st.markdown('<p style="font-size: 1.1rem; color: #00d4ff; font-weight: 700; margin-top: 1.5rem;">📂 Project Location</p>', unsafe_allow_html=True)
