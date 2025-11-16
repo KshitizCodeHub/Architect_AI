@@ -1,13 +1,15 @@
-# Architect AI
-
 <div align="center">
 
-**Transform natural language into complete working projects**
+# 🚀 Architect AI
+
+### *Transform natural language into complete working projects*
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.6.3-green.svg)](https://github.com/langchain-ai/langgraph)
 [![Groq](https://img.shields.io/badge/Groq-Powered-orange.svg)](https://groq.com/)
+
+**💡 Describe your idea → 🤖 AI builds it → 📦 Download & deploy**
 
 </div>
 
@@ -15,24 +17,30 @@ Describe your project in plain English → Get a complete, working application. 
 
 ```mermaid
 flowchart TD
-    Start([User Input: Build a calculator app]) --> Planner
+    Start(["💭 User Input<br/>Build a calculator app"]) --> Planner
     
-    subgraph Pipeline [Agent Pipeline]
-        Planner[Planner Agent<br/>Analyzes requirements] --> Architect
-        Architect[Architect Agent<br/>Designs structure] --> Coder
-        Coder[Coder Agent<br/>Implements code]
+    subgraph Pipeline ["🤖 Agent Pipeline"]
+        Planner["🧠 Planner Agent<br/>📋 Analyzes requirements"] --> Architect
+        Architect["🏗️ Architect Agent<br/>📐 Designs structure"] --> Coder
+        Coder["💻 Coder Agent<br/>⚙️ Implements code"]
     end
     
-    Coder --> Files[Generated Files<br/>index.html<br/>style.css<br/>script.js<br/>README.md]
-    Files --> Download[Download ZIP]
+    Coder --> Files["📁 Generated Files<br/>📄 index.html<br/>🎨 style.css<br/>⚡ script.js<br/>📖 README.md"]
+    Files --> Download["📦 Download ZIP"]
     
-    style Planner fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    style Architect fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#000
-    style Coder fill:#e8f5e8,stroke:#388e3c,stroke-width:2px,color:#000
-    style Pipeline fill:#f5f5f5,stroke:#666,stroke-width:2px
-    style Start fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
-    style Files fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
-    style Download fill:#e0f2f1,stroke:#00796b,stroke-width:2px,color:#000
+    style Planner fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#000
+    style Architect fill:#fce4ec,stroke:#c2185b,stroke-width:3px,color:#000
+    style Coder fill:#e8f5e8,stroke:#388e3c,stroke-width:3px,color:#000
+    style Pipeline fill:#f8f9fa,stroke:#495057,stroke-width:3px,color:#000
+    style Start fill:#fff3e0,stroke:#f57c00,stroke-width:3px,color:#000
+    style Files fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px,color:#000
+    style Download fill:#e0f2f1,stroke:#00796b,stroke-width:3px,color:#000
+    
+    linkStyle 0 stroke:#333,stroke-width:4px
+    linkStyle 1 stroke:#333,stroke-width:4px
+    linkStyle 2 stroke:#333,stroke-width:4px
+    linkStyle 3 stroke:#333,stroke-width:4px
+    linkStyle 4 stroke:#333,stroke-width:4px
 ```
 
 **Perfect For:** Rapid Prototyping • Learning • Client Demos • Side Projects
@@ -85,12 +93,6 @@ This project is open source and available for personal and educational use.
 
 ---
 
-## 📝 License
-
-This project is open source and available for personal and educational use.
-
----
-
 ## ⚠️ Troubleshooting
 
 ### Common Issues
@@ -120,26 +122,16 @@ This project is open source and available for personal and educational use.
 
 ---
 
-## Contributing
+## 🛠️ Built With
 
-Found a bug or have an enhancement idea? Contributions are welcome!
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## Built With
-
-- [LangGraph](https://github.com/langchain-ai/langgraph) - Agent orchestration framework
-- [Groq](https://groq.com/) - Ultra-fast LLM inference
-- [Streamlit](https://streamlit.io/) - Web application framework
+[**LangGraph**](https://github.com/langchain-ai/langgraph) • [**Groq**](https://groq.com/) • [**Streamlit**](https://streamlit.io/)
 
 ---
 
 <div align="center">
 
-**Architect AI** - *Your AI Development Team*
+### 🚀 **Architect AI** - *Your AI Development Team*
+
+*Transform ideas into reality with the power of AI*
 
 </div>
