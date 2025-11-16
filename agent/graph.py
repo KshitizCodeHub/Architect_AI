@@ -13,15 +13,22 @@ from agent.tools import write_file, read_file, get_current_directory, list_files
 _ = load_dotenv()
 
 # Handle both local development and Streamlit Cloud
+import os
 try:
     import streamlit as st
     # Try to get from Streamlit secrets first
-    groq_api_key = st.secrets.get("GROQ_API_KEY", os.getenv("GROQ_API_KEY"))
+    groq_api_key = st.secrets.get("GROQ_API_KEY")
+    if not groq_api_key:
+        groq_api_key = os.getenv("GROQ_API_KEY")
 except:
     # Fallback to environment variable for local development
     groq_api_key = os.getenv("GROQ_API_KEY")
 
-llm = ChatGroq(model="openai/gpt-oss-120b", api_key=groq_api_key)
+# Set as environment variable so ChatGroq can find it
+if groq_api_key:
+    os.environ["GROQ_API_KEY"] = groq_api_key
+
+llm = ChatGroq(model="openai/gpt-oss-120b")
 
 
 def planner_agent(state: dict) -> dict:
