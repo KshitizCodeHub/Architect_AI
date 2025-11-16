@@ -26,30 +26,16 @@ flowchart TD
     Coder --> Files[Generated Files<br/>index.html<br/>style.css<br/>script.js<br/>README.md]
     Files --> Download[Download ZIP]
     
-    style Planner fill:#e1f5fe
-    style Architect fill:#f3e5f5
-    style Coder fill:#e8f5e8
+    style Planner fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Architect fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#000
+    style Coder fill:#e8f5e8,stroke:#388e3c,stroke-width:2px,color:#000
+    style Pipeline fill:#f5f5f5,stroke:#666,stroke-width:2px
+    style Start fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
+    style Files fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
+    style Download fill:#e0f2f1,stroke:#00796b,stroke-width:2px,color:#000
 ```
 
 **Perfect For:** Rapid Prototyping • Learning • Client Demos • Side Projects
-
-```mermaid
-flowchart TD
-    Start([User Input: Build a calculator app]) --> Planner
-    
-    subgraph Pipeline [Agent Pipeline]
-        Planner[Planner Agent<br/>Analyzes requirements] --> Architect
-        Architect[Architect Agent<br/>Designs structure] --> Coder
-        Coder[Coder Agent<br/>Implements code]
-    end
-    
-    Coder --> Files[Generated Files<br/>index.html<br/>style.css<br/>script.js<br/>README.md]
-    Files --> Download[Download ZIP]
-    
-    style Planner fill:#e1f5fe
-    style Architect fill:#f3e5f5
-    style Coder fill:#e8f5e8
-```
 
 ## Quick Setup
 
