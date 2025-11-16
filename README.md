@@ -4,6 +4,8 @@
 
 **Transform natural language into complete working projects**
 
+[![Try the App](https://img.shields.io/badge/🚀_Try_the_App-Live_Demo-brightgreen?style=for-the-badge)](https://architect-ai.streamlit.app/)
+
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.6.3-green.svg)](https://github.com/langchain-ai/langgraph)
@@ -45,6 +47,12 @@ flowchart TD
 ```
 
 **Perfect For:** Rapid Prototyping • Learning • Client Demos • Side Projects
+
+## 🎯 Try It Now
+
+**🌐 [Launch Live App →](https://architect-ai.streamlit.app/)** - No installation required!
+
+Or run locally:
 
 ## Quick Setup
 
