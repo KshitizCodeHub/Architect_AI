@@ -1,3 +1,4 @@
+import os
 from dotenv import load_dotenv
 from langchain_groq.chat_models import ChatGroq
 from langgraph.constants import END
@@ -8,9 +9,19 @@ from agent.prompts import *
 from agent.states import *
 from agent.tools import write_file, read_file, get_current_directory, list_files
 
+# Load environment variables
 _ = load_dotenv()
 
-llm = ChatGroq(model="openai/gpt-oss-120b")
+# Handle both local development and Streamlit Cloud
+try:
+    import streamlit as st
+    # Try to get from Streamlit secrets first
+    groq_api_key = st.secrets.get("GROQ_API_KEY", os.getenv("GROQ_API_KEY"))
+except:
+    # Fallback to environment variable for local development
+    groq_api_key = os.getenv("GROQ_API_KEY")
+
+llm = ChatGroq(model="openai/gpt-oss-120b", api_key=groq_api_key)
 
 
 def planner_agent(state: dict) -> dict:
