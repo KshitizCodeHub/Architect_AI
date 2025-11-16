@@ -13,41 +13,25 @@
 
 ---
 
-## 📖 Overview
+## 🚀 Overview
 
-**Architect AI** is a revolutionary autonomous code generation system that transforms natural language descriptions into complete, functional software projects. Built with a stunning Streamlit interface and powered by cutting-edge AI technology, it simulates an entire development team working in harmony.
+**Architect AI** transforms your ideas into complete, working software projects through natural language. Just describe what you want - "Create a modern to-do app" or "Build a colorful calculator" - and watch three AI agents collaborate to plan, design, and code your entire project!
 
-### 🎯 What Makes Architect AI Special?
+### ✨ Why Architect AI?
 
-- **🧠 Intelligent Multi-Agent System**: Three specialized AI agents (Planner, Architect, Coder) collaborate like a real dev team
-- **🎨 Beautiful Real-Time Interface**: Watch your project come to life with smooth animations and live progress tracking
-- **📦 Complete Project Generation**: From HTML/CSS/JS apps to Python backends - full projects, not just code snippets
-- **⚡ Lightning Fast**: Powered by Groq's ultra-fast inference for near-instant results
-- **📥 Instant Downloads**: Get your complete project as a ready-to-deploy ZIP file
-- **🎯 Smart Complexity Control**: Adjust project complexity with intelligent recursion limits
+- **🧠 Smart Multi-Agent Team**: Planner → Architect → Coder working together
+- **⚡ Lightning Fast**: Groq-powered for near-instant results  
+- **📦 Complete Projects**: Full applications, not just code snippets
+- **🎨 Beautiful Interface**: Real-time progress with smooth animations
+- **📥 Ready to Deploy**: Download as ZIP and run immediately
 
-Simply describe your vision in plain English - "Create a modern to-do app with dark theme" or "Build a calculator with colorful animations" - and watch Architect AI plan, design, and implement your entire project from scratch!
+### 🎯 Perfect For
 
-### 🚀 Perfect For
+**Rapid Prototyping** • **Learning & Education** • **Client Demos** • **Side Projects** • **Code Inspiration**
 
-- **Rapid Prototyping**: Turn ideas into working prototypes in minutes
-- **Learning & Education**: See how complete projects are structured and built
-- **Client Demos**: Quickly create proof-of-concepts for presentations
-- **Side Projects**: Generate fully functional apps without starting from scratch
-- **Code Inspiration**: Get fresh perspectives on solving common problems
+### ⚡ Key Features
 
-### ✨ Key Features
-
-- 🎨 **Beautiful Streamlit UI** - Interactive web interface with smooth animations
-- 🤖 **Multi-Agent Architecture** - Three specialized AI agents working in harmony
-- 📝 **Natural Language Input** - Describe your project in plain English
-- 🏗️ **Automated Project Scaffolding** - Creates complete project structures
-- 💾 **Real-time Progress Tracking** - Watch agents work with dynamic status indicators
-- 📥 **Download Projects as ZIP** - Get your complete project instantly
-- 📁 **Unique Project Folders** - Each project saved with timestamp for organization
-- 🎯 **Dynamic Examples** - Smart examples that adapt to your complexity settings
-- 🔧 **Tool-Augmented Coding** - Uses real file system operations like a human developer
-- 🚀 **Powered by Groq** - Lightning-fast inference using state-of-the-art LLMs
+🎨 **Streamlit UI** • 🤖 **Multi-Agent System** • 📝 **Natural Language** • 🏗️ **Auto Scaffolding** • 💾 **Real-time Tracking** • 📥 **ZIP Downloads** • 🎯 **Smart Examples** • 🔧 **File Operations** • 🚀 **Groq Powered**
 
 ---
 
@@ -94,44 +78,22 @@ Before you begin, ensure you have the following installed:
 - **uv** (Python package installer) - [Installation Guide](https://docs.astral.sh/uv/getting-started/installation/)
 - **Groq API Key** - [Get your API key](https://console.groq.com/keys)
 
-### 📦 Installation
+### 📦 Quick Setup
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd architect-ai
-   ```
+```bash
+# Clone and setup
+git clone <repository-url>
+cd architect-ai
+uv venv && .venv\Scripts\Activate.ps1  # Windows
+# source .venv/bin/activate              # macOS/Linux
 
-2. **Create and activate a virtual environment**
-   
-   **Windows (PowerShell):**
-   ```powershell
-   uv venv
-   .venv\Scripts\Activate.ps1
-   ```
-   
-   **macOS/Linux:**
-   ```bash
-   uv venv
-   source .venv/bin/activate
-   ```
+# Install dependencies
+pip install streamlit groq langchain-groq langgraph python-dotenv
 
-3. **Install dependencies**
-   ```bash
-   pip install streamlit groq langchain-groq langgraph python-dotenv
-   ```
-
-4. **Configure environment variables**
-   
-   Create a `.env` file in the project root:
-   ```bash
-   cp .sample_env .env
-   ```
-   
-   Edit `.env` and add your Groq API key:
-   ```env
-   GROQ_API_KEY=your_api_key_here
-   ```
+# Configure API key
+cp .sample_env .env
+# Edit .env and add: GROQ_API_KEY=your_api_key_here
+```
 
 ### ▶️ Running Architect AI
 
@@ -160,58 +122,19 @@ Use the **Recursion Limit** slider in the sidebar to control project complexity:
 
 ## 💡 Usage
 
-### Quick Start
+1. **Launch:** `streamlit run app.py`
+2. **Describe:** "Create a modern to-do app with dark theme"
+3. **Generate:** Watch 🧠 Planner → 🏗️ Architect → 💻 Coder work their magic
+4. **Download:** Get your complete project as ZIP
 
-1. **Launch the application**
-   ```bash
-   streamlit run app.py
-   ```
+### 🎨 Try These Prompts
 
-2. **Enter your project idea** in the text area
-   - Example: "Create a simple calculator web application"
-
-3. **Adjust the recursion limit** using the sidebar slider (if needed)
-
-4. **Click "Generate Project"** and watch the magic happen!
-
-5. **Monitor progress** as agents work:
-   - 🧠 **Planner** creates the project plan
-   - 🏗️ **Architect** designs the implementation
-   - 💻 **Coder** builds your project file by file
-
-6. **Download your project** as a ZIP file when complete
-
-### Example Prompts
-
-Here are some example prompts to get you started:
-
-1. **Web Applications**
-   ```
-   Create a to-do list application using HTML, CSS, and JavaScript with local storage
-   ```
-
-2. **Interactive Tools**
-   ```
-   Build a simple calculator with a modern UI using vanilla JavaScript
-   ```
-
-3. **Games**
-   ```
-   Create a dice rolling game with colorful animations
-   ```
-
-4. **Landing Pages**
-   ```
-   Design a modern landing page for a tech startup with smooth animations
-   ```
-
-### 📥 Downloading Your Project
-
-After generation completes:
-1. Click the **"📥 Download Project as ZIP"** button
-2. The ZIP file will be downloaded to your browser's download folder
-3. Extract and open in your favorite code editor
-4. Projects are also saved in `generated_projects/` folder with timestamps
+```
+• "Build a colorful calculator with animations"
+• "Create a dice rolling game with sound effects" 
+• "Design a modern landing page for a startup"
+• "Make a to-do app with local storage"
+```
 
 ---
 
@@ -264,24 +187,11 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ---
 
-## 🔧 Technical Details
+## ⚙️ Tech Stack
 
-### Dependencies
+**Streamlit** • **LangGraph** • **Groq** • **Pydantic**
 
-- **Streamlit** - Beautiful web UI framework
-- **LangChain & LangGraph** - Agent orchestration and workflow management
-- **Groq** - Lightning-fast LLM inference (using `openai/gpt-oss-120b` model)
-- **Pydantic** - Data validation and settings management
-- **python-dotenv** - Environment variable management
-
-### Agent Tools
-
-The Coder Agent has access to these tools:
-
-- `write_file(path, content)` - Create or overwrite files
-- `read_file(path)` - Read file contents
-- `list_files(directory)` - List files in a directory
-- `get_current_directory()` - Get the current working directory
+**Agent Tools:** `write_file` • `read_file` • `list_files` • `get_current_directory`
 
 ---
 
@@ -303,32 +213,15 @@ This project is open source and available for personal and educational use.
 
 ---
 
-## 🐛 Troubleshooting
+## 🔧 Quick Fixes
 
-### Common Issues
+**API Key Issues:** Create `.env` with `GROQ_API_KEY=your_key` • Restart app
 
-**Issue: "Groq API key not found"**
-- Ensure you've created a `.env` file with your `GROQ_API_KEY`
-- Verify the API key is valid at [Groq Console](https://console.groq.com/keys)
-- Restart the Streamlit app after adding the key
+**Module Errors:** Activate venv • Reinstall dependencies
 
-**Issue: "Module not found" errors**
-- Make sure your virtual environment is activated
-- Reinstall dependencies: `pip install streamlit groq langchain-groq langgraph python-dotenv`
+**Too Slow:** Lower recursion limit • Simplify prompts
 
-**Issue: "Recursion limit exceeded"**
-- Increase the recursion limit using the sidebar slider
-- Try simplifying your prompt or breaking it into smaller projects
-- Start with Conservative mode (50) for simple projects
-
-**Issue: "Port already in use"**
-- Stop any running Streamlit instances
-- Or specify a different port: `streamlit run app.py --server.port 8502`
-
-**Issue: "Project generation takes too long"**
-- Lower the recursion limit for faster generation
-- Use simpler, more specific prompts
-- Check your internet connection for Groq API calls
+**Port Busy:** Use `--server.port 8502`
 
 ---
 
