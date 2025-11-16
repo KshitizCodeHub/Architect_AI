@@ -910,7 +910,21 @@ if generate_button and user_prompt:
             """)
             
         except Exception as e:
-            st.error(f"❌ Error: {str(e)}")
+            error_msg = str(e)
+            if "rate_limit_exceeded" in error_msg or "Rate limit reached" in error_msg:
+                st.error("🚫 **Rate Limit Reached**")
+                st.warning("""
+                **The API has reached its daily token limit. Here are your options:**
+                
+                1. **Wait a few minutes** and try again (rate limits reset periodically)
+                2. **Use a shorter prompt** to reduce token usage
+                3. **Upgrade your Groq account** at [console.groq.com/settings/billing](https://console.groq.com/settings/billing)
+                4. **Try again later** when the daily limit resets
+                
+                The app will automatically try fallback models if available.
+                """)
+            else:
+                st.error(f"❌ Error: {error_msg}")
             progress_bar.progress(0)
             status_text.text("")
 

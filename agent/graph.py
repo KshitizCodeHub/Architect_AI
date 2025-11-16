@@ -33,23 +33,40 @@ if not groq_api_key:
     # Set a placeholder and let ChatGroq handle it
     os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY", "")
 
-# Initialize ChatGroq
-try:
-    if groq_api_key:
-        llm = ChatGroq(
-            api_key=groq_api_key,
-            model="openai/gpt-oss-120b",
-            temperature=0.1
-        )
-    else:
-        # Let ChatGroq find the API key from environment
-        llm = ChatGroq(
-            model="openai/gpt-oss-120b",
-            temperature=0.1
-        )
-except Exception as e:
-    # If initialization fails, try without explicit parameters
-    llm = ChatGroq(model="openai/gpt-oss-120b")
+# Initialize ChatGroq with fallback models for rate limiting
+def initialize_llm():
+    models_to_try = [
+        "openai/gpt-oss-120b",  # Your preferred model
+        "llama-3.1-70b-versatile",  # Fallback 1
+        "llama-3.1-8b-instant",  # Fallback 2 (fastest)
+        "mixtral-8x7b-32768"  # Fallback 3
+    ]
+    
+    for model in models_to_try:
+        try:
+            if groq_api_key:
+                llm = ChatGroq(
+                    api_key=groq_api_key,
+                    model=model,
+                    temperature=0.1
+                )
+            else:
+                llm = ChatGroq(
+                    model=model,
+                    temperature=0.1
+                )
+            # Test the model with a simple call
+            llm.invoke("test")
+            print(f"✅ Successfully initialized with model: {model}")
+            return llm
+        except Exception as e:
+            print(f"⚠️ Model {model} failed: {str(e)}")
+            continue
+    
+    # If all models fail, use the original approach
+    return ChatGroq(model="openai/gpt-oss-120b")
+
+llm = initialize_llm()
 
 
 def planner_agent(state: dict) -> dict:
