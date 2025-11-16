@@ -837,7 +837,12 @@ if generate_button and user_prompt:
             with col_m1:
                 st.metric("⏱️ Time", f"{generation_time:.1f}s")
             with col_m2:
-                files_count = len(plan.files) if plan and hasattr(plan, 'files') else 0
+                # Count actual files created in the project directory
+                files_count = 0
+                if os.path.exists(project_root):
+                    files_count = sum([len(files) for r, d, files in os.walk(project_root)])
+                elif plan and hasattr(plan, 'files'):
+                    files_count = len(plan.files)  # Fallback to plan if project dir doesn't exist yet
                 st.metric("📄 Files", files_count)
             with col_m3:
                 estimated_tokens = len(user_prompt) * 50
