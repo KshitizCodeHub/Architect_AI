@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-from langchain.globals import set_verbose, set_debug
 from langchain_groq.chat_models import ChatGroq
 from langgraph.constants import END
 from langgraph.graph import StateGraph
@@ -10,9 +9,6 @@ from agent.states import *
 from agent.tools import write_file, read_file, get_current_directory, list_files
 
 _ = load_dotenv()
-
-set_debug(True)
-set_verbose(True)
 
 llm = ChatGroq(model="openai/gpt-oss-120b")
 
