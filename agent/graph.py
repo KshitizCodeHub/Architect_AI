@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from langchain_groq.chat_models import ChatGroq
+from langchain_groq import ChatGroq
 from langgraph.constants import END
 from langgraph.graph import StateGraph
 from langgraph.prebuilt import create_react_agent
@@ -24,11 +24,15 @@ except:
     # Fallback to environment variable for local development
     groq_api_key = os.getenv("GROQ_API_KEY")
 
-# Set as environment variable so ChatGroq can find it
-if groq_api_key:
-    os.environ["GROQ_API_KEY"] = groq_api_key
+# Initialize ChatGroq with explicit API key
+if not groq_api_key:
+    raise ValueError("GROQ_API_KEY not found in environment variables or Streamlit secrets")
 
-llm = ChatGroq(model="openai/gpt-oss-120b")
+llm = ChatGroq(
+    api_key=groq_api_key,
+    model="openai/gpt-oss-120b",
+    temperature=0.1
+)
 
 
 def planner_agent(state: dict) -> dict:
