@@ -15,18 +15,19 @@ Describe your project in plain English → Get a complete, working application. 
 
 ```mermaid
 flowchart TD
-    Start([User Input: Build a calculator app]) --> Planner
+    Start([User Input: Build a calculator app])
     
-    subgraph Pipeline [Agent Pipeline]
+    subgraph Pipeline [" Agent Pipeline "]
         Planner[Planner Agent<br/>Analyzes requirements] --> Architect
         Architect[Architect Agent<br/>Designs structure] --> Coder
         Coder[Coder Agent<br/>Implements code]
     end
     
+    Start --> Pipeline
     Coder --> Files[Generated Files<br/>index.html<br/>style.css<br/>script.js<br/>README.md]
     Files --> Download[Download ZIP]
     
-    style Planner fill:#e3f2fd,stroke:#1976d2,stroke-width:1px,color:#000
+    style Planner fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#000
     style Architect fill:#fce4ec,stroke:#c2185b,stroke-width:3px,color:#000
     style Coder fill:#e8f5e8,stroke:#388e3c,stroke-width:3px,color:#000
     style Pipeline fill:#f8f9fa,stroke:#495057,stroke-width:3px,color:#000
